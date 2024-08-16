@@ -47,7 +47,8 @@ class CounterTest(TestCase):
     def test_health(self):
         """ It should be healthy """
         resp = self.app.get("/health")
-        self.assertEqual(resp.status_code, status.HTTP_200_OK)
+        #self.assertEqual(resp.status_code, status.HTTP_200_OK)
+        self.assertEqual(resp.status_code, status.HTTP_409_CONFLICT)
 
     def test_create_counters(self):
         """ It should Create a counter """
